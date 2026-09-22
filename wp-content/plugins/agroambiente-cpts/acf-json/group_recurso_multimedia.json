@@ -1,0 +1,94 @@
+{
+	"key": "group_agro_recurso_multimedia",
+	"title": "Recurso multimedia",
+	"fields": [
+		{
+			"key": "field_agro_rm_tipo_archivo",
+			"label": "Origen del recurso",
+			"name": "tipo_archivo",
+			"type": "button_group",
+			"instructions": "Define si el recurso se sube como archivo o se enlaza desde un servicio externo (YouTube, Vimeo, Spotify, etc.).",
+			"required": 1,
+			"choices": {
+				"subido": "Archivo subido",
+				"enlace": "Enlace externo"
+			},
+			"default_value": "subido",
+			"layout": "horizontal",
+			"return_format": "value"
+		},
+		{
+			"key": "field_agro_rm_archivo",
+			"label": "Archivo",
+			"name": "archivo",
+			"type": "file",
+			"instructions": "Video, audio o imagen a subir directamente al medio de WordPress.",
+			"required": 0,
+			"return_format": "array",
+			"library": "all",
+			"conditional_logic": [
+				[
+					{
+						"field": "field_agro_rm_tipo_archivo",
+						"operator": "==",
+						"value": "subido"
+					}
+				]
+			]
+		},
+		{
+			"key": "field_agro_rm_enlace_externo",
+			"label": "Enlace externo",
+			"name": "enlace_externo",
+			"type": "url",
+			"instructions": "URL del recurso alojado en un servicio externo.",
+			"required": 0,
+			"conditional_logic": [
+				[
+					{
+						"field": "field_agro_rm_tipo_archivo",
+						"operator": "==",
+						"value": "enlace"
+					}
+				]
+			]
+		},
+		{
+			"key": "field_agro_rm_duracion",
+			"label": "Duración",
+			"name": "duracion",
+			"type": "text",
+			"instructions": "Formato mm:ss.",
+			"required": 0,
+			"placeholder": "05:30"
+		},
+		{
+			"key": "field_agro_rm_creditos",
+			"label": "Créditos / autoría",
+			"name": "creditos",
+			"type": "textarea",
+			"instructions": "",
+			"required": 0,
+			"rows": 3,
+			"new_lines": "wpautop"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "recurso-multimedia"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "Campos específicos del CPT Recurso multimedia.",
+	"show_in_rest": 1
+}

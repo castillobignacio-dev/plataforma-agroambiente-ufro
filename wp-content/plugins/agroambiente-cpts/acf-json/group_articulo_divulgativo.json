@@ -1,0 +1,59 @@
+{
+	"key": "group_agro_articulo_divulgativo",
+	"title": "Artículo divulgativo",
+	"fields": [
+		{
+			"key": "field_agro_ad_autor",
+			"label": "Autor",
+			"name": "autor",
+			"type": "text",
+			"required": 0
+		},
+		{
+			"key": "field_agro_ad_fecha_publicacion",
+			"label": "Fecha de publicación",
+			"name": "fecha_publicacion",
+			"type": "date_picker",
+			"instructions": "Fecha de publicación original, si difiere de la fecha de publicación en el sitio.",
+			"required": 0,
+			"display_format": "d/m/Y",
+			"return_format": "Ymd",
+			"first_day": 1
+		},
+		{
+			"key": "field_agro_ad_fuente",
+			"label": "Fuente / medio original",
+			"name": "fuente",
+			"type": "text",
+			"instructions": "Si el artículo fue publicado originalmente en otro medio.",
+			"required": 0
+		},
+		{
+			"key": "field_agro_ad_tiempo_lectura",
+			"label": "Tiempo de lectura estimado (min)",
+			"name": "tiempo_lectura",
+			"type": "number",
+			"required": 0,
+			"min": 1,
+			"step": 1
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "articulo-divulgativo"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "Campos específicos del CPT Artículo divulgativo.",
+	"show_in_rest": 1
+}

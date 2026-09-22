@@ -37,12 +37,24 @@ wp-config.php
 
 # All plugins
 #
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
+# Ignoramos todos los plugins de terceros (ACF PRO, etc. son de licencia
+# y se instalan manualmente en cada entorno) y sólo versionamos el
+# plugin propio del proyecto.
+/wp-content/plugins/*
+!/wp-content/plugins/agroambiente-cpts/
 
 # All themes
 #
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+# Divi se instala manualmente (licencia propia) y no se versiona aquí.
+/wp-content/themes/*
+
+# Node / wp-env
+node_modules/
+.wp-env.override.json
+
+# Composer (por si en el futuro se agrega alguna dependencia PHP)
+/wp-content/plugins/agroambiente-cpts/vendor/
+
+# OS
+.DS_Store
+Thumbs.db
